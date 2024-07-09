@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>Background &amp; Borders</title>
+        <link rel="stylesheet" href="../backgroundBorders/background&Border.css" type="text/css">
+    </head>
+    <body>
+        <header>
+            <h1>Background and Borders </h1>
+        </header>
+        <main>
+            <article>
+                <h2>Styling background in CSS</h2>
+                <p>
+                    The CSS background property is a shorthand for a number of background longhand properties that we will meet in this lesson. If you discover a complex background property in a stylesheet, it might seem a little hard to understand as so many values can be passed in at once.
+                </p>
+                <h3>Background colors</h3>
+                <p>
+                    The background-color property defines the background color on any element in CSS. The property accepts any valid <color>. A background-color extends underneath the content and padding box of the element.
+                </p>
+
+                <h3>Background images</h3>
+                <p>
+                    The background-image property enables the display of an image in the background of an element.
+                </p>
+               
+                <h3>Controlling background-repeat</h3>
+                <p>
+                    The background-repeat property is used to control the tiling behavior of images. The available values are:
+                </p>
+                <ul>
+                    <li>no-repeat — stop the background from repeating altogether.</li>
+                    <li>repeat-x — repeat horizontally.</li>
+                    <li>repeat-y — repeat vertically.</li>
+                    <li>repeat — the default; repeat in both directions.</li>
+                </ul>
+
+                <h3>Sizing the background image</h3>
+                <p>
+                    In this case we could use the background-size property, which can take <length> or <percentage> values, to size the image to fit inside the background.
+                </p>
+                <p>You can also use keywords:</p>
+                <ul>
+                    <li>cover — the browser will make the image just large enough so that it completely covers the box area while still retaining its aspect ratio. In this case, part of the image is likely to end up outside the box.</li>
+                    <li>contain — the browser will make the image the right size to fit inside the box. In this case, you may end up with gaps on either side or on the top and bottom of the image, if the aspect ratio of the image is different from that of the box.</li>
+                </ul>
+
+                <h3>Positioning the background image</h3>
+                <p>
+                    The background-position property allows you to choose the position in which the background image appears on the box it is applied to. This uses a coordinate system in which the top-left-hand corner of the box is (0,0), and the box is positioned along the horizontal (x) and vertical (y) axes.
+                </p>
+
+                <div class="note">
+                    <p>Note: The default background-position value is (0,0).</p>
+                </div>
+
+                <p>
+                    The most common background-position values take two individual values — a horizontal value followed by a vertical value.
+                </p>
+                <p>
+                    You can use keywords such as top and right (look up the others on the background-position page):
+                </p>
+
+                <div class="cod">
+                    <code>
+                        .box { <br>
+                            &nbsp; background-image: url('images/bg.png'); <br>
+                            &nbsp; background-repeat: no-repeat; <br>
+                            &nbsp; background-position: top center; <br>
+                        }
+                    </code>
+                </div>
+                <h3>Gradient backgrounds</h3>
+                <p>
+                    A gradient — when used for a background — acts just like an image and is also set by using the background-image property.
+                </p>
+                <div class="linear-gradient">
+                    <code>
+                        &lt;div class="wrapper"&gt;  <br>
+                           &nbsp; &lt;div class="box a"&gt;&lt;/div&gt; <br>
+                           &nbsp; &lt;div class="box b"&gt;&lt;/div&gt; <br>
+                          &lt;/div&gt; <br>
+                    </code>
+                </div>
+                <br>
+                
+                <div class="radial-gradient">
+                    <code>
+                        .a { <br>
+                          &nbsp;  background-image: linear-gradient(105deg, rgb(0 249 255 / 100%) 39%, <br> &nbsp; rgb(51 56 57 / 100%) 96%); <br>
+                        } <br>
+                          
+                        .b { <br>
+                           &nbsp; background-image: radial-gradient(circle, rgb(0 249 255 / 100%) 39%, <br> &nbsp; rgb(51 56 57 / 100%) 96%);
+                            background-size: 100px 50px; <br>
+                          } <br>
+                    </code>
+    
+                </div>
+                <h3>multiple background images</h3>
+                <p>
+                    It is also possible to have multiple background images — you specify multiple background-image values in a single property value, separating each one with a comma.
+                </p>
+                <p>
+                    When you do this you may end up with background images overlapping each other. The backgrounds will layer with the last listed background image at the bottom of the stack, and each previous image stacking on top of the one that follows it in the code.
+                </p>
+
+                <h3>Background attachment</h3>
+                <p>
+                    Another option we have available for backgrounds is specifying how they scroll when the content scrolls. This is controlled using the background-attachment property, which can take the following values:
+                </p>
+                <ul>
+                    <li>scroll: causes the element's background to scroll when the page is scrolled. If the element content is scrolled, the background does not move. In effect, the background is fixed to the same position on the page, so it scrolls as the page scrolls.</li>
+                    <li>fixed: causes an element's background to be fixed to the viewport so that it doesn't scroll when the page or element content is scrolled. It will always remain in the same position on the screen.</li>
+                    <li>local: fixes the background to the element it is set on, so when you scroll the element, the background scrolls with it.</li>
+                </ul>
+                <p>
+                    The background-attachment property only has an effect when there is content to scroll.
+                </p>
+
+                <h3>Accessibility considerations with backgrounds</h3>
+                <p>
+                    When placing text on top of a background image or color, you should take care that you have enough contrast for the text to be legible for your visitors. If specifying an image, and if text will be placed on top of that image, you should also specify a background-color that will allow the text to be legible if the image does not load.
+                </p>
+                <p>
+                    Screen readers cannot parse background images; therefore, they should be purely decoration. Any important content should be part of the HTML page and not contained in a background.
+                </p>
+
+                <h2>Borders</h2>
+                <p>
+                    When learning about the Box Model, we discovered how borders affect the size of our box. In this lesson we will look at how to use borders creatively. Typically when we add borders to an element with CSS we use a shorthand property that sets the color, width, and style of the border in one line of CSS.
+                </p>
+                <p>
+                    We can set a border for all four sides of a box with border.
+                </p>
+
+                <h3>Rounded corners</h3>
+                <p>
+                    Rounding corners on a box is achieved by using the border-radius property and associated longhands which relate to each corner of the box. Two lengths or percentages may be used as a value, the first value defining the horizontal radius, and the second the vertical radius. In a lot of cases, you will only pass in one value, which will be used for both.
+                </p>
+
+                <code>
+                    .box { <br>
+                       &nbsp; border-radius: 10px; <br>
+                       &nbsp; border-top-right-radius: 1em 10%; <br>
+                    } <br>
+                </code>
+
+            </article>
+        </main>
+        <footer>
+            <p>&copy; 2024, all copyrights reserved to ajayaPadua.com</p>
+        </footer>
+    </body>
+</html>
