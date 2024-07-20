@@ -21,8 +21,18 @@ body {
     background-attachment: fixed;
 }
 
+header {
+    box-sizing: border-box;
+    margin: 0;
+    min-height: fit-content;
+    border-bottom: 2px solid gray;
+}
+
 /* background colors */
 h1 {
+    box-sizing: border-box;
+    border-bottom: 2px solid lightseagreen;
+    border-inline-end: 2px solid lightseagreen;
     background-color: rgb(127, 172, 255);  
     text-align: center; 
 }
